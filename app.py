@@ -2,8 +2,9 @@ import json
 import openai
 from flask import Flask, render_template, request, jsonify
 import random
+import os
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder=os.path.join('my_project', 'templates'))
 
 def get_openai_api_key():
     with open('openai_secrets.json') as f:
